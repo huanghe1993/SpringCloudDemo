@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: eureka-server1
+server:
+  ssl:
+    enabled: true # 开始ssl认证
+    key-alias: server1 # 证书别名
+    key-store: classpath:server1.keystore # 证书位置
+    key-store-type: JKS # 秘钥库存储类型
+    key-store-password: 123456 # 秘钥库口令
+    trust-store: classpath:trustStore.keystore # 信任库证书位置
+    trust-store-type: JKS # 信任库秘钥存储类型
+    trust-store-password: 123456 # 秘钥库口令
+  port: 7883
+eureka:
+  client:
+    service-url:
+      defaultZone: https://localhost:8761/eureka
