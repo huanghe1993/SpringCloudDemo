@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native # 本地模式
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://localhost:5001/root/cloud-repo.git
+          username: root
+          password: 12345678
+          default-label: main
+        native:
+          search-locations: classpath:/cloud-repo # 指定目录方式
+server:
+  port: 8888
