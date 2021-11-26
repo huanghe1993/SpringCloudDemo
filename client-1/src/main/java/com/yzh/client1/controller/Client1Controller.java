@@ -39,7 +39,7 @@ public class Client1Controller {
     @GetMapping("twoDog")
     public Dog twoDog() {
         log.info("hahaa");
-        final ResponseEntity<Dog> forEntity = restTemplate.getForEntity("https://eureka-server1:7883/server1/twoDog",
+        final ResponseEntity<Dog> forEntity = restTemplate.getForEntity("https://eureka-server1/server1/twoDog",
             Dog.class);
         return forEntity.getBody();
     }
